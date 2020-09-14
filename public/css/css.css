@@ -1,0 +1,88 @@
+/* CSS page loginProf */
+.wrapper {	
+	margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);  
+}
+
+.form-createUser {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);  
+}
+
+
+.form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+}
+
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+
+.container-form-carousel{
+    justify-content: center;
+    display: flex;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.form_class{
+    justify-content: space-between;
+    margin-bottom: 0rem;
+}
+
+.titulo-forms{
+    margin-top: -50px;
+    margin-bottom: 25px;
+}
+
+.lista-atividades{
+    max-width: 600px;
+    margin-top: 80px;
+}
+
+.btn-cadastro{
+    margin-top: 15px;
+}
+
+.check-obrigatorio{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.btn-link-jogavel{
+    width: 320px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    top: 50%;
+    bottom: 50%;
+}
+
+.targets-actions{
+    justify-content: space-between;
+    display: flex;
+    margin-top: -2px;
+}
+
+.fa-trash {
+    color: red;
+  }
