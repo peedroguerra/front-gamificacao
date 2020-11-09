@@ -9,10 +9,18 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/css.css">
+ 
   <title>Página inicial</title>
 </head>
 
 <body>
+
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+  crossorigin="anonymous"></script>
+  <script src="./js/js.js"></script>
+ 
 
   <nav class="navbar navbar-dark bg-primary nav justify-content-space-between">
 
@@ -44,9 +52,7 @@
         </div>
       </div>
     </div>
-
   </nav>
-
 
   <div id="carouselExampleControls" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
@@ -61,7 +67,7 @@
                   <div class="form-group row form_class">
                     <label for="ativo" class="col-sm-8 col-form-label"><strong>3.0 Resultado Exercício</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="ativo" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext" id="ativoDRE" value="R$">
                     </div>
                   </div>
 
@@ -69,7 +75,7 @@
                     <label for="ativo-circulante" class="col-sm-8 col-form-label"><strong>3.1 Lucro
                         Bruto</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="ativo-circulante" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext" id="" value="R$">
                     </div>
                   </div>
 
@@ -84,7 +90,7 @@
                   <div class="form-group row form_class">
                     <label for="caixa" class="col-sm-8 col-form-label">1.1.1.1.1 Caixa</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="caixa" placeholder="R$">
+                      <input type="currency" class="form-control-plaintext" placeholder="R$">
                     </div>
                   </div>
 
@@ -105,7 +111,7 @@
                   <div class="form-group row form_class">
                     <label for="estoque" class="col-sm-8 col-form-label"><strong>1.1.3 Estoque</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="estoque" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext"  value="R$">
                     </div>
                   </div>
 
@@ -129,14 +135,14 @@
                     <label for="imobilizados" class="col-sm-8 col-form-label"><strong>1.2.1
                         Imobilizados</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="imobilizados" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext" id="imobilizadosDRE" value="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="equipamentos" class="col-sm-8 col-form-label">1.2.1.1 Equipamentos</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="equipamentos" placeholder="R$">
+                      <input type="currency" class="form-control-plaintext" id="equipamentosDRE" placeholder="R$">
                     </div>
                   </div>
 
@@ -154,6 +160,7 @@
           </div>
         </div>
       </div>
+
       <div class="carousel-item">
         <div class="container">
           <div class="container-form-carousel">
@@ -165,7 +172,7 @@
                   <div class="form-group row form_class">
                     <label for="ativo" class="col-sm-8 col-form-label"><strong>1.0 Ativo</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="ativo" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="ativo" value="R$ 0" style=" color: green;">
                     </div>
                   </div>
 
@@ -173,59 +180,38 @@
                     <label for="ativo-circulante" class="col-sm-8 col-form-label"><strong>1.1 Ativo
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="ativo-circulante" value="R$">
+                      <input  type="text" class="form-control-plaintext readOnlyInputs"  name="ativoCirculante" readonly  style="font-weight: bold;" placeholder="R$ 0" id="ativoCirculante">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="disponibilidade" class="col-sm-8 col-form-label"><strong>1.1.1
-                        Disponibilidade</strong></label>
+                    <label for="caixa" class="col-sm-8 col-form-label">1.1.1 Caixa</label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="disponibilidade" value="R$">
+                      <input type="text" class="form-control-plaintext " name="caixa" id="caixa" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="caixa" class="col-sm-8 col-form-label">1.1.1.1.1 Caixa</label>
+                    <label for="cliente" class="col-sm-8 col-form-label">1.1.2 Contas à receber</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="caixa" placeholder="R$">
+                      <input type="text" class="form-control-plaintext "  name="contasReceber" id="contasReceber" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="credito" class="col-sm-8 col-form-label"><strong>1.1.2 Créditos</strong></label>
+                    <label for="estoque" class="col-sm-8 col-form-label">1.1.3 Estoque</label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="credito" value="R$">
+                      <input type="text" class="form-control-plaintext " name="estoque" id="estoque" placeholder="R$">
                     </div>
                   </div>
 
-                  <div class="form-group row form_class">
-                    <label for="cliente" class="col-sm-8 col-form-label">1.1.2.1 Clientes</label>
-                    <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="cliente" placeholder="R$">
-                    </div>
-                  </div>
-
-                  <div class="form-group row form_class">
-                    <label for="estoque" class="col-sm-8 col-form-label"><strong>1.1.3 Estoque</strong></label>
-                    <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="estoque" value="R$">
-                    </div>
-                  </div>
-
-                  <div class="form-group row form_class">
-                    <label for="estoque-mercadoria" class="col-sm-8 col-form-label">1.1.3.1 Estoque Mercadorias</label>
-                    <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="estoque-mercadoria" placeholder="R$">
-                    </div>
-                  </div>
 
                   <div class="form-group row form_class">
                     <label for="ativo-nao-circulante" class="col-sm-8 col-form-label"><strong>1.2 Ativo Não
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="ativo-nao-circulante"
-                        value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="ativoNaoCirculante"
+                        placeholder="R$ 0">
                     </div>
                   </div>
 
@@ -233,24 +219,30 @@
                     <label for="imobilizados" class="col-sm-8 col-form-label"><strong>1.2.1
                         Imobilizados</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="imobilizados" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="imobilizados"  placeholder="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="equipamentos" class="col-sm-8 col-form-label">1.2.1.1 Equipamentos</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="equipamentos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " id="equipamentos" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.2 Móveis e Utensílios</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="moveis-equipamentos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " id="moveisUtensilhos" placeholder="R$">
                     </div>
                   </div>
 
+                  <div class="form-group row form_class">
+                    <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.3 Veículos</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control-plaintext " id="veiculos" placeholder="R$">
+                    </div>
+                  </div>
 
                 </div>
 
@@ -259,7 +251,7 @@
                   <div class="form-group row form_class">
                     <label for="passivo" class="col-sm-8 col-form-label"><strong>2.0 Passivo</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="passivo" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" style="font-weight: bold; color: red;" value="R$ 0" id="passivo">
                     </div>
                   </div>
 
@@ -267,85 +259,61 @@
                     <label for="passivo-circulante" class="col-sm-8 col-form-label"><strong>2.1 Passivo
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="passivo-circulante" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" " id="passivoCirculante" placeholder="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="Onefornecedores" class="col-sm-8 col-form-label"><strong>2.1.1
-                        Fornecedores</strong></label>
+                    <label for="Onefornecedores" class="col-sm-8 col-form-label">2.1.1
+                        Fornecedores</label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="Onefornecedores" value="R$">
+                      <input type="text"  class="form-control-plaintext" id="fornecedores" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="Twofornecedores" class="col-sm-8 col-form-label">2.1.1.1 Fornecedores</label>
+                    <label for="Twofornecedores" class="col-sm-8 col-form-label">2.1.2 Salários</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="Twofornecedores" value="R$">
+                      <input type="text" class="form-control-plaintext" id="salarios" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.1.1.2 Outras contas a
-                      pagar</label>
+                    <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.1.3 Impostos</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="outras-contas-pagar" value="R$">
+                      <input type="text" class="form-control-plaintext" id="impostos" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="obrigacoes" class="col-sm-8 col-form-label"><strong>2.1.2 Obrigações
-                        sociais</strong></label>
+                    <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.1.4 Aluguel</label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="obrigacoes" value="R$">
+                      <input type="text" class="form-control-plaintext" id="aluguel" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="salarios-pagar" class="col-sm-8 col-form-label">2.1.2.1 Sálarios a pagar</label>
+                    <label for="passivo-circulante" class="col-sm-8 col-form-label"><strong>2.2 Passivo Não
+                        Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="salarios-pagar" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" " id="passivoNaoCirculante" placeholder="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="ferias-pagar" class="col-sm-8 col-form-label">2.1.2.2 Férias a pagar</label>
+                    <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.2.1 Financiamentos</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="ferias-pagar" value="R$">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group row form_class">
-                    <label for="imposto-pagar" class="col-sm-8 col-form-label"><strong>2.1.3 Impostos a
-                        pagar</strong></label>
-                    <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="imposto-pagar" value="R$">
+                      <input type="text" class="form-control-plaintext" id="financiamentos" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="simples-pagar" class="col-sm-8 col-form-label">2.1.3.1 Simples Nacional a pagar</label>
+                    <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.2.2 Empréstimos</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="simples-pagar" value="R$">
+                      <input type="text" class="form-control-plaintext" id="emprestimos" placeholder="R$">
                     </div>
                   </div>
 
-                  <div class="form-group row form_class">
-                    <label for="emprestimo-a-pagar" class="col-sm-8 col-form-label"><strong>2.1.4 Empréstimo a
-                        pagar</strong></label>
-                    <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="emprestimo-a-pagar" value="R$">
-                    </div>
-                  </div>
-
-                  <div class="form-group row form_class">
-                    <label for="emprestimos-pagar" class="col-sm-8 col-form-label">2.1.4.1 Emprestimo banco</label>
-                    <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="emprestimos-pagar" value="R$">
-                    </div>
-                  </div>
 
                 </div>
               </div>
@@ -360,7 +328,7 @@
 
           <div class="container lista-atividades">
 
-            <h3 class="">Atividades cadastradas</h3>
+            <h3 class="text-center">Atividades cadastradas</h3>
 
             <table class="table">
               <thead>
@@ -539,11 +507,8 @@
 
 
 </body>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="./js/jquery.mask.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
