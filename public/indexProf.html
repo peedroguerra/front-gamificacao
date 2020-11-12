@@ -65,32 +65,45 @@
                 <div class="col">
 
                   <div class="form-group row form_class">
-                    <label for="ativo" class="col-sm-8 col-form-label"><strong>3.0 Resultado Exercício</strong></label>
+                    <label for="receita-operacional-bruta" class="col-sm-8 col-form-label" style="color: mediumseagreen;"><strong>RECEITA OPERACIONAL BRUTA</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="ativoDRE" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext" id="receitaOperacionalBruta" value="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="ativo-circulante" class="col-sm-8 col-form-label"><strong>3.1 Lucro
-                        Bruto</strong></label>
+                    <label for="venda-mercadorias" class="col-sm-8 col-form-label">Venda de mercadorias</label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="" value="R$">
+                      <input type="currency"  class="form-control-plaintext" id="vendaMercadorias" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="disponibilidade" class="col-sm-8 col-form-label"><strong>1.1.1
-                        Disponibilidade</strong></label>
+                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label" style="color: tomato;"><strong>DEDUÇÕES DA RECEITA BRUTA</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="disponibilidade" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext" id="deducoesReceitaBruta" value="R$">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group row form_class">
+                    <label for="ativo-circulante" class="col-sm-8 col-form-label">Devoluções</label>
+                    <div class="col-sm-4">
+                      <input type="currency"  class="form-control-plaintext" id="devolucoes" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="caixa" class="col-sm-8 col-form-label">1.1.1.1.1 Caixa</label>
+                    <label for="ativo-circulante" class="col-sm-8 col-form-label">Impostos e Contribuições</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" placeholder="R$">
+                      <input type="currency"  class="form-control-plaintext" id="impostosContribuicoes" placeholder="R$">
+                    </div>
+                  </div>
+
+                  <div class="form-group row form_class">
+                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label" style="color: darkgoldenrod;"><strong>RECEITA OPERACIONAL LÍQUIDA</strong></label>
+                    <div class="col-sm-4">
+                      <input type="currency" readonly class="form-control-plaintext" id="receitaOperacionalLiquida" value="R$">
                     </div>
                   </div>
 
@@ -187,21 +200,21 @@
                   <div class="form-group row form_class">
                     <label for="caixa" class="col-sm-8 col-form-label">1.1.1 Caixa</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " name="caixa" id="caixa" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" name="caixa" id="caixa" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="cliente" class="col-sm-8 col-form-label">1.1.2 Contas à receber</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext "  name="contasReceber" id="contasReceber" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);"  name="contasReceber" id="contasReceber" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="estoque" class="col-sm-8 col-form-label">1.1.3 Estoque</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " name="estoque" id="estoque" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" name="estoque" id="estoque" placeholder="R$">
                     </div>
                   </div>
 
@@ -226,21 +239,21 @@
                   <div class="form-group row form_class">
                     <label for="equipamentos" class="col-sm-8 col-form-label">1.2.1.1 Equipamentos</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " id="equipamentos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" id="equipamentos" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.2 Móveis e Utensílios</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " id="moveisUtensilhos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" id="moveisUtensilhos" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.3 Veículos</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " id="veiculos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" id="veiculos" placeholder="R$">
                     </div>
                   </div>
 
@@ -267,14 +280,14 @@
                     <label for="Onefornecedores" class="col-sm-8 col-form-label">2.1.1
                         Fornecedores</label>
                     <div class="col-sm-4">
-                      <input type="text"  class="form-control-plaintext" id="fornecedores" placeholder="R$">
+                      <input type="text"  class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="fornecedores" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="Twofornecedores" class="col-sm-8 col-form-label">2.1.2 Salários</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="salarios" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="salarios" placeholder="R$">
                     </div>
                   </div>
 
@@ -288,7 +301,7 @@
                   <div class="form-group row form_class">
                     <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.1.4 Aluguel</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="aluguel" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="aluguel" placeholder="R$">
                     </div>
                   </div>
 
@@ -313,7 +326,20 @@
                       <input type="text" class="form-control-plaintext" id="emprestimos" placeholder="R$">
                     </div>
                   </div>
+                  
+                    <div class="form-group row form_class">
+                      <label for="passivo" class="col-sm-8 col-form-label"><strong>3.0 Patrimônio Liquido</strong></label>
+                      <div class="col-sm-4">
+                        <input type="currency" readonly class="form-control-plaintext readOnlyInputs" style="font-weight: bold; color: mediumblue;" value="R$ 0" id="patrimonioLiquido">
+                      </div>
+                    </div>
 
+                    <div class="form-group row form_class">
+                      <label for="outras-contas-pagar" class="col-sm-8 col-form-label">3.1 Capital social</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control-plaintext" id="capitalSocial" placeholder="R$">
+                      </div>
+                    </div>
 
                 </div>
               </div>
@@ -345,7 +371,7 @@
                   <th scope="row">1</th>
                   <td>Compra à vista de matéria prima</td>
                   <td>Caixa</td>
-                  <td>Materia prima</td>
+                  <td>Estoque</td>
                   <td class="targets-actions">
                     <a data-target="#editar-atividade" href="" data-toggle="modal"><i class="far fa-edit"></i></a>
                     <a data-target="#excluir-atividade" href="" data-toggle="modal"><i class="fas fa-trash"></i></a>

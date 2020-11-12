@@ -1,4 +1,6 @@
 
+// CALCULOS PARA O BALANÇO PATRIMONIAL
+
 // CALCULA VALORES ATIVO CIRCULANTE
 $(document).ready(function() {
     $("#estoque,#contasReceber,#caixa").on('keyup', function() {
@@ -10,7 +12,7 @@ $(document).ready(function() {
     });
   });
 
-  // CALCULA VALORES ATIVO NAO CIRCULANTE
+// CALCULA VALORES ATIVO NAO CIRCULANTE
 $(document).ready(function() {
   $("#equipamentos,#moveisUtensilhos,#veiculos").on('keyup', function() {
     var equipamentos = $('#equipamentos').val() || 0;
@@ -22,7 +24,7 @@ $(document).ready(function() {
   });
 });
 
-  // CALCULA TODOS OS ATIVOS
+// CALCULA TODOS OS ATIVOS
 $(document).ready(function(){
   $("#equipamentos,#moveisUtensilhos,#veiculos,#estoque,#contasReceber,#caixa").on('keyup', function(){
     var caixa = $('#caixa').val() || 0;
@@ -61,9 +63,8 @@ $(document).ready(function() {
   });
 });
 
-
-  // CALCULA TODOS OS PASSIVOS
-  $(document).ready(function(){
+// CALCULA TODOS OS PASSIVOS
+$(document).ready(function(){
     $("#fornecedores,#salarios,#impostos,#aluguel,#financiamentos,#emprestimos").on('keyup', function(){
          var fornecedores = $('#fornecedores').val() || 0;
         var salarios = $('#salarios').val() || 0;
@@ -77,14 +78,41 @@ $(document).ready(function() {
     });
   });
   
+  // CALCULA PATRIMONIO LIQUIDO
+$(document).ready(function() {
+    $("#capitalSocial").on('keyup', function() {
+      var capitalSocial = $('#capitalSocial').val() || 0;
+      var resultado = parseFloat(capitalSocial);   
+      $('#patrimonioLiquido').val(convertToCurrency(resultado));    
+    });
+  });
+
+
+// CALCULOS PARA O DRE
+
+
+
+
+
+
+
+
 
 // CONVERTE FLOAT PARA CURRENCY ATUAL
-  function convertToCurrency(value) {
-    return value.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-      minimumFractionDigits: 2
-    })
+function convertToCurrency(value) {
+  return value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2
+  })
+}
+
+// CAMPOS SOMENTE NUMEROS
+function somenteNumeros(num) {
+  var er = /[^0-9.]/;
+  er.lastIndex = 0;
+  var campo = num;
+  if (er.test(campo.value)) {
+    campo.value = "";
   }
-
-
+}
