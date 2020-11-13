@@ -9,18 +9,16 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/css.css">
- 
+
   <title>Página inicial</title>
 </head>
 
 <body>
 
-  <script
-  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
   <script src="./js/js.js"></script>
- 
+
 
   <nav class="navbar navbar-dark bg-primary nav justify-content-space-between">
 
@@ -65,23 +63,28 @@
                 <div class="col">
 
                   <div class="form-group row form_class">
-                    <label for="receita-operacional-bruta" class="col-sm-8 col-form-label" style="color: mediumseagreen;"><strong>RECEITA OPERACIONAL BRUTA</strong></label>
+                    <label for="receita-operacional-bruta" class="col-sm-8 col-form-label"
+                      style="color: mediumseagreen;"><strong>RECEITA OPERACIONAL BRUTA</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="receitaOperacionalBruta" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        id="receitaOperacionalBruta" value="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="venda-mercadorias" class="col-sm-8 col-form-label">Venda de mercadorias</label>
                     <div class="col-sm-4">
-                      <input type="currency"  class="form-control-plaintext" id="vendaMercadorias" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" id="vendaMercadorias"
+                        onkeyup="somenteNumeros(this);" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label" style="color: tomato;"><strong>DEDUÇÕES DA RECEITA BRUTA</strong></label>
+                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label" style="color: tomato;"><strong>
+                        (-) DEDUÇÕES DA RECEITA BRUTA</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="deducoesReceitaBruta" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        id="deducoesReceitaBruta" value="R$ 0">
                     </div>
                   </div>
 
@@ -89,80 +92,76 @@
                   <div class="form-group row form_class">
                     <label for="ativo-circulante" class="col-sm-8 col-form-label">Devoluções</label>
                     <div class="col-sm-4">
-                      <input type="currency"  class="form-control-plaintext" id="devolucoes" placeholder="R$">
+                      <input type="currency" class="form-control-plaintext" id="devolucoes"
+                        onkeyup="somenteNumeros(this);" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="ativo-circulante" class="col-sm-8 col-form-label">Impostos e Contribuições</label>
                     <div class="col-sm-4">
-                      <input type="currency"  class="form-control-plaintext" id="impostosContribuicoes" placeholder="R$">
+                      <input type="currency" class="form-control-plaintext" id="impostosContribuicoes"
+                        onkeyup="somenteNumeros(this);" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label" style="color: darkgoldenrod;"><strong>RECEITA OPERACIONAL LÍQUIDA</strong></label>
+                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label"
+                      style="color: darkgoldenrod;"><strong> (=) RECEITA OPERACIONAL LÍQUIDA</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="receitaOperacionalLiquida" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        id="receitaOperacionalLiquida" value="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="credito" class="col-sm-8 col-form-label"><strong>1.1.2 Créditos</strong></label>
+                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label " style="color: tomato;"><strong>
+                        (-) DESPESAS OPERACIONAIS</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="credito" value="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        id="despesasOperacionais" value="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="cliente" class="col-sm-8 col-form-label">1.1.2.1 Clientes</label>
+                    <label for="ativo-circulante" class="col-sm-8 col-form-label">Despesas com vendas</label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="cliente" placeholder="R$">
+                      <input type="currency" class="form-control-plaintext" id="despesasComVendas"
+                        onkeyup="somenteNumeros(this);" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="estoque" class="col-sm-8 col-form-label"><strong>1.1.3 Estoque</strong></label>
+                    <label for="ativo-circulante" class="col-sm-8 col-form-label">Despesas Administrativas</label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext"  value="R$">
+                      <input type="currency" class="form-control-plaintext" id="despesasAdministrativas"
+                        onkeyup="somenteNumeros(this);" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="estoque-mercadoria" class="col-sm-8 col-form-label">1.1.3.1 Estoque Mercadorias</label>
+                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label"
+                      style="color: darkgoldenrod;"><strong>(=) RESULTADO ANTES DO IMPOSTO DE RENDA </strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="estoque-mercadoria" placeholder="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        id="resultadoAntesImpostoRenda" value="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="ativo-nao-circulante" class="col-sm-8 col-form-label"><strong>1.2 Ativo Não
-                        Circulante</strong></label>
+                    <label for="ativo-circulante" class="col-sm-8 col-form-label">(-) Imposto de Renda </label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="ativo-nao-circulante"
-                        value="R$">
+                      <input type="currency" class="form-control-plaintext" id="impostoDeRenda"
+                        onkeyup="somenteNumeros(this);" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="imobilizados" class="col-sm-8 col-form-label"><strong>1.2.1
-                        Imobilizados</strong></label>
+                    <label for="deducoes-receita-bruta" class="col-sm-8 col-form-label"
+                      style="color: darkgoldenrod;"><strong>(=) RESULTADO LÍQUIDO DO EXERCÍCIO</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext" id="imobilizadosDRE" value="R$">
-                    </div>
-                  </div>
-
-                  <div class="form-group row form_class">
-                    <label for="equipamentos" class="col-sm-8 col-form-label">1.2.1.1 Equipamentos</label>
-                    <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="equipamentosDRE" placeholder="R$">
-                    </div>
-                  </div>
-
-                  <div class="form-group row form_class">
-                    <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.2 Móveis e Utensílios</label>
-                    <div class="col-sm-4">
-                      <input type="currency" class="form-control-plaintext" id="moveis-equipamentos" placeholder="R$">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        id="resultadoLiquidoExercicio" value="R$ 0">
                     </div>
                   </div>
 
@@ -185,7 +184,8 @@
                   <div class="form-group row form_class">
                     <label for="ativo" class="col-sm-8 col-form-label"><strong>1.0 Ativo</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="ativo" value="R$ 0" style=" color: green;">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="ativo"
+                        value="R$ 0" style=" color: green;">
                     </div>
                   </div>
 
@@ -193,28 +193,32 @@
                     <label for="ativo-circulante" class="col-sm-8 col-form-label"><strong>1.1 Ativo
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input  type="text" class="form-control-plaintext readOnlyInputs"  name="ativoCirculante" readonly  style="font-weight: bold;" placeholder="R$ 0" id="ativoCirculante">
+                      <input type="text" class="form-control-plaintext readOnlyInputs" name="ativoCirculante" readonly
+                        style="font-weight: bold;" placeholder="R$ 0" id="ativoCirculante">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="caixa" class="col-sm-8 col-form-label">1.1.1 Caixa</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" name="caixa" id="caixa" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" name="caixa"
+                        id="caixa" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="cliente" class="col-sm-8 col-form-label">1.1.2 Contas à receber</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);"  name="contasReceber" id="contasReceber" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);"
+                        name="contasReceber" id="contasReceber" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="estoque" class="col-sm-8 col-form-label">1.1.3 Estoque</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" name="estoque" id="estoque" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" name="estoque"
+                        id="estoque" placeholder="R$">
                     </div>
                   </div>
 
@@ -223,8 +227,8 @@
                     <label for="ativo-nao-circulante" class="col-sm-8 col-form-label"><strong>1.2 Ativo Não
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="ativoNaoCirculante"
-                        placeholder="R$ 0">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        id="ativoNaoCirculante" placeholder="R$ 0">
                     </div>
                   </div>
 
@@ -232,28 +236,32 @@
                     <label for="imobilizados" class="col-sm-8 col-form-label"><strong>1.2.1
                         Imobilizados</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="imobilizados"  placeholder="R$ 0">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="imobilizados"
+                        placeholder="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="equipamentos" class="col-sm-8 col-form-label">1.2.1.1 Equipamentos</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" id="equipamentos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);"
+                        id="equipamentos" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.2 Móveis e Utensílios</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" id="moveisUtensilhos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);"
+                        id="moveisUtensilhos" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.3 Veículos</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" id="veiculos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext " onkeyup="somenteNumeros(this);" id="veiculos"
+                        placeholder="R$">
                     </div>
                   </div>
 
@@ -264,7 +272,8 @@
                   <div class="form-group row form_class">
                     <label for="passivo" class="col-sm-8 col-form-label"><strong>2.0 Passivo</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" style="font-weight: bold; color: red;" value="R$ 0" id="passivo">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        style="font-weight: bold; color: red;" value="R$ 0" id="passivo">
                     </div>
                   </div>
 
@@ -272,22 +281,25 @@
                     <label for="passivo-circulante" class="col-sm-8 col-form-label"><strong>2.1 Passivo
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" " id="passivoCirculante" placeholder="R$ 0">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" " id="
+                        passivoCirculante" placeholder="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="Onefornecedores" class="col-sm-8 col-form-label">2.1.1
-                        Fornecedores</label>
+                      Fornecedores</label>
                     <div class="col-sm-4">
-                      <input type="text"  class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="fornecedores" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);"
+                        id="fornecedores" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="Twofornecedores" class="col-sm-8 col-form-label">2.1.2 Salários</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="salarios" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="salarios"
+                        placeholder="R$">
                     </div>
                   </div>
 
@@ -301,7 +313,8 @@
                   <div class="form-group row form_class">
                     <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.1.4 Aluguel</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="aluguel" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="aluguel"
+                        placeholder="R$">
                     </div>
                   </div>
 
@@ -309,7 +322,8 @@
                     <label for="passivo-circulante" class="col-sm-8 col-form-label"><strong>2.2 Passivo Não
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" " id="passivoNaoCirculante" placeholder="R$ 0">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" " id="
+                        passivoNaoCirculante" placeholder="R$ 0">
                     </div>
                   </div>
 
@@ -326,20 +340,22 @@
                       <input type="text" class="form-control-plaintext" id="emprestimos" placeholder="R$">
                     </div>
                   </div>
-                  
-                    <div class="form-group row form_class">
-                      <label for="passivo" class="col-sm-8 col-form-label"><strong>3.0 Patrimônio Liquido</strong></label>
-                      <div class="col-sm-4">
-                        <input type="currency" readonly class="form-control-plaintext readOnlyInputs" style="font-weight: bold; color: mediumblue;" value="R$ 0" id="patrimonioLiquido">
-                      </div>
-                    </div>
 
-                    <div class="form-group row form_class">
-                      <label for="outras-contas-pagar" class="col-sm-8 col-form-label">3.1 Capital social</label>
-                      <div class="col-sm-4">
-                        <input type="text" class="form-control-plaintext" id="capitalSocial" placeholder="R$">
-                      </div>
+                  <div class="form-group row form_class">
+                    <label for="passivo" class="col-sm-8 col-form-label"><strong>3.0 Patrimônio Liquido</strong></label>
+                    <div class="col-sm-4">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                        style="font-weight: bold; color: mediumblue;" value="R$ 0" id="patrimonioLiquido">
                     </div>
+                  </div>
+
+                  <div class="form-group row form_class">
+                    <label for="outras-contas-pagar" class="col-sm-8 col-form-label">3.1 Capital social</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);"
+                        id="capitalSocial" placeholder="R$">
+                    </div>
+                  </div>
 
                 </div>
               </div>

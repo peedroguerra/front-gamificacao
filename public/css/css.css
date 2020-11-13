@@ -93,3 +93,11 @@
     border: 0 none;        
     outline: 0;
 }
+
+.valorNegativo{
+    color: red;
+}
+
+.valorPositivo{
+    color: green;
+}

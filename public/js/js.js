@@ -78,7 +78,7 @@ $(document).ready(function(){
     });
   });
   
-  // CALCULA PATRIMONIO LIQUIDO
+// CALCULA PATRIMONIO LIQUIDO
 $(document).ready(function() {
     $("#capitalSocial").on('keyup', function() {
       var capitalSocial = $('#capitalSocial').val() || 0;
@@ -87,16 +87,102 @@ $(document).ready(function() {
     });
   });
 
+//CALCULOS DO DEMONSTRATIVO RESULTADO EXERCICIO
+//CALCULO RECEITA OPERACIONAL BRUTA
+$(document).ready(function() {
+  $("#vendaMercadorias").on('keyup', function() {
+    var vendaMercadorias = $('#vendaMercadorias').val() || 0;
+    var resultado = parseFloat(vendaMercadorias);   
+    $('#receitaOperacionalBruta').val(convertToCurrency(resultado));    
+  });
+});
 
-// CALCULOS PARA O DRE
+//CALCULO DEDUCOES DA RECEITA BRUTA
+$(document).ready(function() {
+  $("#devolucoes,#impostosContribuicoes").on('keyup', function() {
+    var devolucoes = $('#devolucoes').val() || 0;
+    var impostosContribuicoes = $('#impostosContribuicoes').val() || 0;
+    var resultado = parseFloat(impostosContribuicoes) + parseFloat(devolucoes);  
+    if(resultado < 0){
+      $("#deducoesReceitaBruta").addClass("valorNegativo");
+    }
+    $('#deducoesReceitaBruta').val(convertToCurrency(resultado));    
+  });
+});
+
+//CALCULO RECEITA OPERACIONAL LIQUIDA
+$(document).ready(function() {
+  $("#devolucoes,#impostosContribuicoes,#vendaMercadorias").on('keyup', function() {
+    var vendaMercadorias = $('#vendaMercadorias').val() || 0;
+    var devolucoes = $('#devolucoes').val() || 0;
+    var impostosContribuicoes = $('#impostosContribuicoes').val() || 0;
+    var resultado = parseFloat(vendaMercadorias) - parseFloat(devolucoes) - parseFloat(impostosContribuicoes);   
+    if(resultado < 0){
+      $("#receitaOperacionalLiquida").addClass("valorNegativo");
+    }else{
+      $("#receitaOperacionalLiquida").removeClass("valorNegativo");
+    }
+    $('#receitaOperacionalLiquida').val(convertToCurrency(resultado));    
+  });
+});
+
+//CALCULO DESPESAS OPERACIONAIS
+$(document).ready(function() {
+  $("#despesasAdministrativas,#despesasComVendas").on('keyup', function() {
+    var despesasComVendas = $('#despesasComVendas').val() || 0;
+    var despesasAdministrativas = $('#despesasAdministrativas').val() || 0;
+
+    var resultado = parseFloat(despesasComVendas) + parseFloat(despesasAdministrativas) ;   
+    $('#despesasOperacionais').val(convertToCurrency(resultado));    
+  });
+});
 
 
+//CALCULO RECEITA OPERACIONAL LIQUIDA
+$(document).ready(function() {
+  $("#devolucoes,#impostosContribuicoes,#vendaMercadorias,#despesasComVendas,#despesasAdministrativas").on('keyup', function() {
+    var vendaMercadorias = $('#vendaMercadorias').val() || 0;
+    var devolucoes = $('#devolucoes').val() || 0;
+    var impostosContribuicoes = $('#impostosContribuicoes').val() || 0;
+    var despesasComVendas = $('#despesasComVendas').val() || 0;
+    var despesasAdministrativas = $('#despesasAdministrativas').val() || 0;
+    var resultado = parseFloat(vendaMercadorias) - parseFloat(devolucoes) - parseFloat(impostosContribuicoes)
+    - parseFloat(despesasComVendas)  - parseFloat(despesasAdministrativas);   
+    
+    if(resultado < 0){
+      $("#resultadoAntesImpostoRenda").addClass("valorNegativo");
+    }else{
+      $("#resultadoAntesImpostoRenda").removeClass("valorNegativo");
+    }
+    $('#resultadoAntesImpostoRenda').val(convertToCurrency(resultado));    
+  
+  });
+});
 
-
-
-
-
-
+//CALCULO RESULTADO LIQUIDO DO EXERCICIO
+$(document).ready(function() {
+  $("#devolucoes,#impostosContribuicoes,#vendaMercadorias,#despesasComVendas,#despesasAdministrativas,#impostoDeRenda").on('keyup', function() {
+    var vendaMercadorias = $('#vendaMercadorias').val() || 0;
+    var devolucoes = $('#devolucoes').val() || 0;
+    var impostosContribuicoes = $('#impostosContribuicoes').val() || 0;
+    var despesasComVendas = $('#despesasComVendas').val() || 0;
+    var despesasAdministrativas = $('#despesasAdministrativas').val() || 0;
+    var impostoDeRenda = $('#impostoDeRenda').val() || 0;
+    
+    var resultado = parseFloat(vendaMercadorias) - parseFloat(devolucoes) - parseFloat(impostosContribuicoes)
+    - parseFloat(despesasComVendas)  - parseFloat(despesasAdministrativas) - parseFloat(impostoDeRenda);   
+    
+    if(resultado < 0){
+      $("#resultadoLiquidoExercicio").removeClass("valorPositivo");
+      $("#resultadoLiquidoExercicio").addClass("valorNegativo");
+    }else{
+      $("#resultadoLiquidoExercicio").removeClass("valorNegativo");
+      $("#resultadoLiquidoExercicio").addClass("valorPositivo");
+    }
+    $('#resultadoLiquidoExercicio').val(convertToCurrency(resultado));    
+  
+  });
+});
 
 // CONVERTE FLOAT PARA CURRENCY ATUAL
 function convertToCurrency(value) {
