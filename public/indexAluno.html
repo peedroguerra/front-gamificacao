@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/css.css">
-    <title>Página inicial</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="css/css.css" />
+  <title>Página inicial</title>
 </head>
+
 <body>
-
   <nav class="navbar navbar-dark bg-primary nav justify-content-space-between">
-
     <span class="navbar-text">
       <h1 class="" href="loginProf.html">Kabil</h1>
     </span>
@@ -19,49 +20,274 @@
       Precisa de ajuda?
     </button>
 
-    <!-- Modal -->
+    <!-- Modal ajuda-->
     <div class="modal fade" id="modalAjuda" tabindex="-1" role="dialog" aria-labelledby="tituloLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="tituloLabel">Funcionamento para aluno</h5>
+            <h5 class="modal-title" id="tituloLabel">
+              Funcionamento para aluno
+            </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
+          <div class="modal-body">...</div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-dismiss="modal">Entendido</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal">
+              Entendido
+            </button>
           </div>
         </div>
       </div>
     </div>
   </nav>
 
+  <!-- Modal atividades-->
+  <div class="modal fade" id="modalAtividades" tabindex="-1" role="dialog" aria-labelledby="modalAtividades"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAtividades">
+            Nome da atividade aqui...
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="campoValorAtividade" class="">Qual valor voce pretende cadastrar?
+          </label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">R$</span>
+            </div>
+            <input type="text" class="form-control" name="campoValorAtividade"
+              aria-label="Amount (to the nearest reais)" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Esquecer
+          </button>
+          <button type="button" class="btn btn-success">
+            Cadastrar Valores
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container principalAluno">
-
     <div class="container esquerdaAluno">
-          
       <div class="container informacoesAluno">
-        <h5>Olá <span class="nomeAluno">Nome Aluno...</span></h5>
-        <h5>Jogadas efetuadas: <span class="jogadasEfetuadas">0</span></h5>
+        <h3>Olá <span class="nomeAluno">Nome Aluno...</span></h3>
+        <h3>Jogadas efetuadas: <span class="jogadasEfetuadas">0</span></h3>
+        <h3>Rodada nr: <span class="jogadasEfetuadas">0</span></h3>
       </div>
-      
-      <div class="container" style="max-width: 300px;">
-        <span>Atividades:</span>
-        <ul class="list-group">
-        <li class="list-group-item">Compra à vísta de mercadorias</li>
-        </ul>
+
+      <div class="container atividadesAluno">
+        <h3>Atividades:</h3>
+        <div class="list-group">
+          <a href="#" data-toggle="modal" data-target="#modalAtividades"
+            class="list-group-item list-group-item-action">Pagamento de aluguel</a>
+          <a href="#" class="list-group-item list-group-item-action">Compra à vista de mercadoria</a>
+          <a href="#" class="list-group-item list-group-item-action">Retorna do banco de dados</a>
+          <a href="#" class="list-group-item list-group-item-action">A lista de atividades</a>
+          <a href="#" class="list-group-item list-group-item-action">Nome da atividade irá aqui.</a>
+        </div>
       </div>
-    
+      <div class="container">
+        <button type="button" class="btn btn-outline-success botaoProximaRodada">
+          Proxima Rodada
+        </button>
+      </div>
     </div>
 
+    <div class="container direitaAluno">
+      <form>
+        <h3 class="text-center">Balanço Patrimonial</h3>
+        <div class="form-row fontTamanho">
+          <div class="col">
+            <div class="form-group row form_class">
+              <label for="ativo" class="col-sm-8 col-form-label"><strong>1.0 Ativo</strong></label>
+              <div class="col-sm-4">
+                <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="ativo" value="R$ 0"
+                  style="color: green" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="ativo-circulante" class="col-sm-8 col-form-label"><strong>1.1 Ativo
+                  Circulante</strong></label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control-plaintext readOnlyInputs" name="ativoCirculante" readonly
+                  style="font-weight: bold" placeholder="R$ 0" id="ativoCirculante" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="caixa" class="col-sm-8 col-form-label">1.1.1 Caixa</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" name="caixa" id="caixa"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="cliente" class="col-sm-8 col-form-label">1.1.2 Contas à receber</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" name="contasReceber"
+                  id="contasReceber" placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="estoque" class="col-sm-8 col-form-label">1.1.3 Estoque</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" name="estoque" id="estoque"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="ativo-nao-circulante" class="col-sm-8 col-form-label"><strong>1.2 Ativo Não
+                  Circulante</strong></label>
+              <div class="col-sm-4">
+                <input type="currency" readonly readonly class="form-control-plaintext readOnlyInputs"
+                  id="ativoNaoCirculante" placeholder="R$ 0" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="imobilizados" class="col-sm-8 col-form-label"><strong>1.2.1 Imobilizados</strong></label>
+              <div class="col-sm-4">
+                <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="imobilizados"
+                  placeholder="R$ 0" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="equipamentos" class="col-sm-8 col-form-label">1.2.1.1 Equipamentos</label>
+              <div class="col-sm-4">
+                <input type="text" readonly readonly class="form-control-plaintext readOnlyInputs" id="equipamentos"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.2 Móveis e Utensílios</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="moveisUtensilhos"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="moveis-equipamentos" class="col-sm-8 col-form-label">1.2.1.3 Veículos</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="veiculos"
+                  placeholder="R$" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-group row form_class">
+              <label for="passivo" class="col-sm-8 col-form-label"><strong>2.0 Passivo</strong></label>
+              <div class="col-sm-4">
+                <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                  style="font-weight: bold; color: red" value="R$ 0" id="passivo" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="passivo-circulante" class="col-sm-8 col-form-label"><strong>2.1 Passivo
+                  Circulante</strong></label>
+              <div class="col-sm-4">
+                <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="
+                  passivoCirculante" placeholder="R$ 0" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="Onefornecedores" class="col-sm-8 col-form-label">2.1.1 Fornecedores</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="fornecedores"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="Twofornecedores" class="col-sm-8 col-form-label">2.1.2 Salários</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="salarios"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.1.3 Impostos</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="impostos"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.1.4 Aluguel</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="aluguel"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="passivo-circulante" class="col-sm-8 col-form-label"><strong>2.2 Passivo Não
+                  Circulante</strong></label>
+              <div class="col-sm-4">
+                <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="
+                  passivoNaoCirculante" placeholder="R$ 0" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.2.1 Financiamentos</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="financiamentos"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.2.2 Empréstimos</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="emprestimos"
+                  placeholder="R$" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="passivo" class="col-sm-8 col-form-label"><strong>3.0 Patrimônio Liquido</strong></label>
+              <div class="col-sm-4">
+                <input type="currency" readonly class="form-control-plaintext readOnlyInputs"
+                  style="font-weight: bold; color: mediumblue" value="R$ 0" id="patrimonioLiquido" />
+              </div>
+            </div>
+
+            <div class="form-group row form_class">
+              <label for="outras-contas-pagar" class="col-sm-8 col-form-label">3.1 Capital social</label>
+              <div class="col-sm-4">
+                <input type="text" readonly class="form-control-plaintext readOnlyInputs" id="capitalSocial"
+                  placeholder="R$" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-
-
 </body>
 <script src="./js/jquery.mask.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

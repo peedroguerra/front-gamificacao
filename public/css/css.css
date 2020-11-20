@@ -103,9 +103,35 @@
 }
 
 .informacoesAluno{
-    margin-top: 10px;
+    margin-top: 100px;
 }
 
-.principal{
+.principalAluno{
+    display: flex;
+    max-width: 1700px;
+}
+
+.esquerdaAluno{
     
+}
+.atividadesAluno{
+    margin-top: 50px;
+    max-width: 400px;
+    margin-left: initial;
+}
+
+.direitaAluno{
+    margin-top: 100px;
+}
+
+.centroAluno{
+    max-width: 300px;
+}
+
+.fontTamanho{
+    font-size: 15px;
+}
+
+.botaoProximaRodada{
+    margin-top: 50px;
 }
