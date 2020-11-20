@@ -278,11 +278,10 @@
                   </div>
 
                   <div class="form-group row form_class">
-                    <label for="passivo-circulante" class="col-sm-8 col-form-label"><strong>2.1 Passivo
+                    <label for="passivoCirculante" class="col-sm-8 col-form-label"><strong>2.1 Passivo
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" " id="
-                        passivoCirculante" placeholder="R$ 0">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="passivoCirculante" placeholder="R$ 0">
                     </div>
                   </div>
 
@@ -306,7 +305,7 @@
                   <div class="form-group row form_class">
                     <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.1.3 Impostos</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="impostos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" id="impostos" onkeyup="somenteNumeros(this);" placeholder="R$">
                     </div>
                   </div>
 
@@ -322,22 +321,21 @@
                     <label for="passivo-circulante" class="col-sm-8 col-form-label"><strong>2.2 Passivo Não
                         Circulante</strong></label>
                     <div class="col-sm-4">
-                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" " id="
-                        passivoNaoCirculante" placeholder="R$ 0">
+                      <input type="currency" readonly class="form-control-plaintext readOnlyInputs" id="passivoNaoCirculante" placeholder="R$ 0">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.2.1 Financiamentos</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="financiamentos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="financiamentos" placeholder="R$">
                     </div>
                   </div>
 
                   <div class="form-group row form_class">
                     <label for="outras-contas-pagar" class="col-sm-8 col-form-label">2.2.2 Empréstimos</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control-plaintext" id="emprestimos" placeholder="R$">
+                      <input type="text" class="form-control-plaintext" onkeyup="somenteNumeros(this);" id="emprestimos" placeholder="R$">
                     </div>
                   </div>
 

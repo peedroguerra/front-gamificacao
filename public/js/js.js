@@ -39,6 +39,21 @@ $(document).ready(function(){
   });
 });
 
+// CALCULA TODOS OS PASSIVOS
+$(document).ready(function(){
+    $("#fornecedores,#salarios,#impostos,#aluguel,#financiamentos,#emprestimos").on('keyup', function(){
+        var fornecedores = $('#fornecedores').val() || 0;
+        var salarios = $('#salarios').val() || 0;
+        var impostos = $('#impostos').val() || 0;    
+        var aluguel = $('#aluguel').val() || 0;
+        var financiamentos = $('#financiamentos').val() || 0;
+        var emprestimos = $('#emprestimos').val() || 0;      
+        var resultado = parseFloat(fornecedores) + parseFloat(salarios) + parseFloat(impostos) + 
+        parseFloat(aluguel) + parseFloat(financiamentos) + parseFloat(emprestimos); 
+      $('#passivo').val(convertToCurrency(resultado));
+    });
+  });
+
 // CALCULA VALORES PASSIVO CIRCULANTE
 $(document).ready(function() {
   $("#fornecedores,#salarios,#impostos,#aluguel").on('keyup', function() {
@@ -49,7 +64,8 @@ $(document).ready(function() {
     var aluguel = $('#aluguel').val() || 0;  
 
     var resultado = parseFloat(fornecedores) + parseFloat(salarios) + parseFloat(impostos) + parseFloat(aluguel);     
-    $('#passivoCirculante').val(convertToCurrency(resultado));    
+    $('#passivoCirculante').val(convertToCurrency(resultado));  
+    console.log(convertToCurrency(resultado));
   });
 });
 
@@ -62,21 +78,6 @@ $(document).ready(function() {
     $('#passivoNaoCirculante').val(convertToCurrency(resultado));    
   });
 });
-
-// CALCULA TODOS OS PASSIVOS
-$(document).ready(function(){
-    $("#fornecedores,#salarios,#impostos,#aluguel,#financiamentos,#emprestimos").on('keyup', function(){
-         var fornecedores = $('#fornecedores').val() || 0;
-        var salarios = $('#salarios').val() || 0;
-        var impostos = $('#impostos').val() || 0;    
-        var aluguel = $('#aluguel').val() || 0;
-        var financiamentos = $('#financiamentos').val() || 0;
-        var emprestimos = $('#emprestimos').val() || 0;      
-        var resultado = parseFloat(fornecedores) + parseFloat(salarios) + parseFloat(impostos) + 
-        parseFloat(aluguel) + parseFloat(financiamentos) + parseFloat(emprestimos); 
-      $('#passivo').val(convertToCurrency(resultado));
-    });
-  });
   
 // CALCULA PATRIMONIO LIQUIDO
 $(document).ready(function() {
